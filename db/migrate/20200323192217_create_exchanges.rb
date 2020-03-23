@@ -4,6 +4,7 @@ class CreateExchanges < ActiveRecord::Migration[6.0]
       t.integer :restaurant_id
       t.integer :organization_id
       t.string :exchange_hours
+      t.boolean :status
       t.string :notes
 
       t.timestamps
