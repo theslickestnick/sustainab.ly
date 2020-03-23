@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant_id: 1
+  food_name: MyString
+  type: 
+  quantity: 1
+  use_by: 2020-03-23
+  notes: MyString
+
+two:
+  restaurant_id: 1
+  food_name: MyString
+  type: 
+  quantity: 1
+  use_by: 2020-03-23
+  notes: MyString
