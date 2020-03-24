@@ -3,7 +3,8 @@ class CreateExchanges < ActiveRecord::Migration[6.0]
     create_table :exchanges do |t|
       t.integer :restaurant_id
       t.integer :organization_id
-      t.string :exchange_hours
+      t.datetime :exchange_start
+      t.datetime :exchange_end
       t.boolean :status
       t.string :notes
 

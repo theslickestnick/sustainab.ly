@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2020_03_23_192217) do
   create_table "exchanges", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "organization_id"
-    t.string "exchange_hours"
+    t.datetime "exchange_start"
+    t.datetime "exchange_end"
     t.boolean "status"
     t.string "notes"
     t.datetime "created_at", precision: 6, null: false
@@ -24,17 +25,18 @@ ActiveRecord::Schema.define(version: 2020_03_23_192217) do
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
-    t.string "address"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.integer "zip_code"
     t.string "contact_email"
     t.string "phone_number"
-    t.string "hours"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "restaurant_foods", force: :cascade do |t|
     t.integer "restaurant_id"
-    t.string "food_name"
     t.string "type"
     t.integer "quantity"
     t.date "use_by"
@@ -45,10 +47,12 @@ ActiveRecord::Schema.define(version: 2020_03_23_192217) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "address"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.integer "zip_code"
     t.string "contact_email"
     t.string "phone_number"
-    t.string "hours"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
