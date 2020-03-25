@@ -1,0 +1,28 @@
+<h1> Edit <%= @restaurant.name %> </h1>
+
+<%= form_for @restaurant do |f|%>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %> <%#validate for presence%>
+    
+    <%= f.label :street_address %>
+    <%= f.text_field :street_address %> <%#validate for presence, structure%>
+
+    <%= f.label :city %>
+    <%= f.text_field :city %> <%#validate for presence, structure%>
+
+    <%= f.label :state %>
+    <%= f.text_field :state %> <%#validate for presence, structure%>
+
+    <%= f.label :zip_code %>
+    <%= f.text_field :zip_code%>
+
+    <%= f.label :contact_email %>
+    <%= f.text_field :contact_email %> 
+
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %> 
+
+    <%= f.submit "Confirm Changes" %>
+<% end %>
+
