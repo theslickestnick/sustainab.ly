@@ -14,6 +14,7 @@ class RestaurantsController < ApplicationController
 
     def create 
         @restaurant = Restaurant.create(restaurant_params)
+        session[:restaurant_id] = @restaurant.id #sets restaurant id to session key
         redirect_to restaurant_path(@restaurant)
     end
 
@@ -26,6 +27,6 @@ class RestaurantsController < ApplicationController
     private 
 
     def restaurant_params 
-        params.require(:restaurant).permit(:name, :street_address, :city, :state, :zip_code, :contact_email, :phone_number)
+        params.require(:restaurant).permit(:name, :street_address, :city, :state, :zip_code, :contact_email, :phone_number, :password)
     end
 end

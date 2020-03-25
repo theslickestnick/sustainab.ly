@@ -10,6 +10,17 @@
   </head>
 
   <body>
+  <ul>
+        <li><%= link_to 'Restaurants Home', restaurants_path %></li>
+        <li><%= link_to 'Organizations Home', organizations_path %></li>
+        <li><%= link_to 'New Exchange', new_exchange_path %></li>
+        <% if @current_restaurant %>
+          <li class='right'>Welcome <%= @current_restaurant.name %></li>
+        <% else %>
+          <li class='right'><%= link_to 'Sign Up As Restaurant', new_restaurant_path %></li>
+        <% end %>
+      </ul>
     <%= yield %>
   </body>
 </html>
+

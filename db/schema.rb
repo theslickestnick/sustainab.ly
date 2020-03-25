@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_192217) do
+ActiveRecord::Schema.define(version: 2020_03_25_173212) do
 
   create_table "exchanges", force: :cascade do |t|
     t.integer "restaurant_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_192217) do
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end

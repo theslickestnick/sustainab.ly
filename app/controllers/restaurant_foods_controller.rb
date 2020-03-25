@@ -1,8 +1,4 @@
 class RestaurantFoodsController < ApplicationController
-
-    # def index
-    #     @restaurantfoods = RestaurantFood.all
-    # end
     
     def show
         @restaurantfood = RestaurantFood.find(params[:id])
@@ -13,7 +9,20 @@ class RestaurantFoodsController < ApplicationController
     end
 
     def create 
-        @restaurantfood = RestaurantFood.create(restaurant_food_params)
-        # redirect_to restaurant_food_path
+        params_hash = rest_food_params
+        params_hash[:restaurant_id] = @current_restaurant.id
+        @restaurantfood = RestaurantFood.create(params_hash)
+        redirect_to restaurant_path(@restaurantfood.restaurant) 
+        # else
+        #     flash[:errors].@restaurant_food.error.full_messages
+        #     redirect_to new_restaurant_food_path #need this redirect to new page         
+        # end
     end
+
+    private
+
+    def rest_food_params 
+        params.require(:restaurant_food).permit(:food_type, :quantity, :use_by, :notes)
+    end
+    
 end

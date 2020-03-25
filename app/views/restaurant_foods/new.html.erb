@@ -3,10 +3,10 @@
 <p> Fill out the fields below to add to add a record of excess food to your database.</p><br>
 <p> Once added, you'll be able to add it to the Sustainab.ly Marketplace and other Companies will be able to see what you got!</p>
 
-<%= form_for :restaurant_food do |f|%>
+<%= form_for @restaurantfood do |f|%>
 
     <%= f.label :restaurant_id %>
-    <%= f.text_field @restaurant.id %> <%#validate for presence%>
+  <%#validate for presence//add session%>
     
     <%= f.label :food_type %>
     <%= f.text_field :food_type %> <%#validate for presence, structure%>
@@ -15,11 +15,11 @@
     <%= f.text_field :quantity %> <%#validate for presence, structure%>
 
     <%= f.label :use_by %>
-    <%= f.datetime :_use_by %> <%#validate for presence, structure%>
+    <%= f.datetime_field :use_by %> <%#validate for presence, structure%>
 
     <%= f.label :notes %>
     <%= f.text_field :notes %>
 
-    <%= f.submit "Add Food To Restaurant List" %>
+    <%= f.submit "Add Food To Restaurant List"%>
 <% end %>
 

@@ -9,7 +9,7 @@
     <li>Contact Email: <%= @restaurant.contact_email %></li>
     <li>Phone Number:<%= @restaurant.phone_number %></li>
 </ul>
-<%= button_to "Update Restaurant", edit_restaurant_path(@restaurant) %>
+<%= button_to "Update Restaurant", edit_restaurant_path(@restaurant), method: :get %>
 
 <h3> Our Food List </h3>
 
@@ -21,3 +21,5 @@
         <li> Notes: <%= food.notes %></li><br>
     <% end %>
 </ul>
+
+<%= button_to "Add Food To Your List", new_restaurant_food_path, method: :get %>
