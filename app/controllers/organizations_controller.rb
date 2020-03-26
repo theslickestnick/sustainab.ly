@@ -23,7 +23,7 @@ class OrganizationsController < ApplicationController
     end
 
     def create
-        @organizations = Organization.new(organization_params)
+        @organization = Organization.new(organization_params)
         @organization.save
         redirect_to organization_path(@organization.id)
     end

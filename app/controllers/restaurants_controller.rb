@@ -5,17 +5,18 @@ class RestaurantsController < ApplicationController
     end
 
     def show 
-        @restaurant = Restaurant.find(@current_restaurant.id)
+        @restaurant = Restaurant.find(params[:id])
+        
     end
 
     def edit
-        @restaurant = Restaurant.find(@current_restaurant.id)
+        @restaurant = Restaurant.find(params[:id])
     end
 
     def create 
         @restaurant = Restaurant.create(restaurant_params)
-        session[:restaurant_id] = @restaurant.id #sets restaurant id to session key
-        redirect_to restaurant_path(@restaurant)
+        session[:restaurant_id] = @restaurant.id 
+        redirect_to restaurant_path(@restaurant.id)
     end
 
     def update 
@@ -27,6 +28,6 @@ class RestaurantsController < ApplicationController
     private 
 
     def restaurant_params 
-        params.require(:restaurant).permit(:name, :street_address, :city, :state, :zip_code, :contact_email, :phone_number, :password)
+        params.require(:restaurant).permit(:name, :street_address, :city, :state, :zip_code, :contact_email, :phone_number, :password_digest)
     end
 end

@@ -16,7 +16,7 @@ class RestaurantFoodsController < ApplicationController
         params_hash = rest_food_params
         params_hash[:restaurant_id] = @current_restaurant.id
         @restaurant_food = RestaurantFood.create(params_hash)
-        redirect_to restaurant_path(@restaurant_food.restaurant) 
+        redirect_to restaurant_path(@current_restaurant.id) 
         # else
         #     flash[:errors].@restaurant_food.error.full_messages
         #     redirect_to new_restaurant_food_path #need this redirect to new page         
