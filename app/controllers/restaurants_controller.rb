@@ -5,11 +5,11 @@ class RestaurantsController < ApplicationController
     end
 
     def show 
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.find(@current_restaurant.id)
     end
 
     def edit
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.find(@current_restaurant.id)
     end
 
     def create 
@@ -19,7 +19,7 @@ class RestaurantsController < ApplicationController
     end
 
     def update 
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.find(@current_restaurant.id)
         @restaurant.update(restaurant_params)
         redirect_to restaurant_path(@restaurant)
     end

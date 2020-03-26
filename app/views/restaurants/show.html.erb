@@ -19,6 +19,7 @@
         <li> Quantity: <%= food.quantity %></li><br>
         <li> Use By: <%= food.use_by %></li><br>
         <li> Notes: <%= food.notes %></li><br>
+        <%= button_to "Edit Food", edit_restaurant_food_path(food), method: :get %>
     <% end %>
 </ul>
 

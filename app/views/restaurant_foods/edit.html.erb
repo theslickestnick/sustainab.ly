@@ -1,0 +1,19 @@
+<h1> Heard you wanted to change something up, <%= @current_restaurant.name %>? </h1>
+
+<%= form_for @restaurant_food do |f|%>
+    
+    <%= f.label :food_type %>
+    <%= f.text_field :food_type %> <%#validate for presence, structure%>
+
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %> <%#validate for presence, structure%>
+
+    <%= f.label :use_by %>
+    <%= f.datetime_field :use_by %> <%#validate for presence, structure%>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes%>
+
+    <%= f.submit "Confirm Changes" %>
+
+<% end %>
