@@ -12,7 +12,7 @@ class RestaurantFoodsController < ApplicationController
         @restaurant_food = RestaurantFood.find(params[:id])
     end
 
-    def create 
+    def create
         params_hash = rest_food_params
         params_hash[:restaurant_id] = @current_restaurant.id
         @restaurant_food = RestaurantFood.create(params_hash)
@@ -23,12 +23,11 @@ class RestaurantFoodsController < ApplicationController
         # end
     end
 
-    def update 
-        restaurant_food = #find restaurant food to update first 
+    def update  
         params_hash = rest_food_params
         params_hash[:restaurant_id] = @current_restaurant.id
-        restaurant_food.update(params_hash)
-        redirect_to restaurant_path(@restaurant_food.restaurant)
+        @restaurant_food = RestaurantFood.update(params_hash)
+        redirect_to restaurant_path(@current_restaurant.id)
     end
 
     private
