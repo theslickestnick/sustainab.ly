@@ -9,6 +9,7 @@
 Restaurant.destroy_all
 RestaurantFood.destroy_all
 Exchange.destroy_all
+Organzation.destory_all
 
 20.times do 
     Restaurant.create(:name => Faker::Restaurant.name, :street_address => Faker::Address.street_address, 
@@ -18,6 +19,7 @@ end
 
 150.times do 
     RestaurantFood.create(:food_type => Faker::Food.dish, :quantity => rand(20..100), :restaurant_id => Restaurant.all.sample.id, :use_by => Faker::Date.forward(days: 100), :notes => Faker::Lorem.paragraph)
+<<<<<<< HEAD
 end
 
 30.times do
@@ -33,5 +35,6 @@ end
 10.times do
     Exchange.create(restaurant_id: Restaurant.all.sample.id , status: true, notes: Faker::Lorem.paragraph)
 end
+
 
 

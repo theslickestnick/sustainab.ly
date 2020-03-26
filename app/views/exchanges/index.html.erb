@@ -1,4 +1,4 @@
-<h1> Today's Exchanges </h1>
-<%= Exchange.all.each do %>
-<% end %>
-
+<h1> Todays Exchanges </h1>
+<% @exchanges.all.each do |exchange| %>
+<li><%=exchange %></li>
+<%end%>
