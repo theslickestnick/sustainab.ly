@@ -25,6 +25,7 @@ class OrganizationsController < ApplicationController
     def create
         @organizations = Organization.new(organization_params)
         @organization.save
+        session[:organization_id] = @organization.id
         redirect_to organization_path(@organization.id)
     end
 

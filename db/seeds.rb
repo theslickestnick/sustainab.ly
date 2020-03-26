@@ -21,7 +21,7 @@ end
 30.times do
     Organization.create(:name => Faker::Restaurant.name, :street_address => Faker::Address.street_address,
         :city => Faker::Address.city, :state => Faker::Address.state, :zip_code => Faker::Address.zip_code,
-        :contact_email => Faker::Internet.email, :phone_number => Faker::PhoneNumber.phone_number)
+        :contact_email => Faker::Internet.email, :phone_number => Faker::PhoneNumber.phone_number, :password_digest => Faker::Number.number(digits: 5))
 end
 5.times do
     Exchange.create(restaurant_id: Restaurant.all.sample.id , organization_id: Organization.all.sample.id, status: false, notes: Faker::Lorem.paragraph)
