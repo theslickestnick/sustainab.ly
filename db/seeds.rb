@@ -8,17 +8,20 @@
 
 Restaurant.destroy_all
 RestaurantFood.destroy_all
+<<<<<<< HEAD
 Exchange.destroy_all
 Organization.destroy_all
 
+=======
+>>>>>>> 1800e6dab627fb0caccf456ca37837b1efb81b6b
 20.times do 
     Restaurant.create(:name => Faker::Restaurant.name, :street_address => Faker::Address.street_address, 
     :city => Faker::Address.city, :state => Faker::Address.state, :zip_code => Faker::Address.zip_code, 
     :contact_email => Faker::Internet.email, :phone_number => Faker::PhoneNumber.phone_number)
 end
-
 150.times do 
     RestaurantFood.create(:food_type => Faker::Food.dish, :quantity => rand(20..100), :restaurant_id => Restaurant.all.sample.id, :use_by => Faker::Date.forward(days: 100), :notes => Faker::Lorem.paragraph)
+<<<<<<< HEAD
 end
 
 30.times do
@@ -33,3 +36,6 @@ end
 end 
     
     
+=======
+end
+>>>>>>> 1800e6dab627fb0caccf456ca37837b1efb81b6b
