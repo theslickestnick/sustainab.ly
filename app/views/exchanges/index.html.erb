@@ -1,3 +1,4 @@
 <h1> Todays Exchanges </h1>
-<%= @organization.all%>
+<% @exchanges.all.each do |exchange| %>
+<li><%=exchange %></li>
 <%end%>
