@@ -1,4 +1,4 @@
-<h1>Our Valued Oraganizations</h1>
+<h1>Our Valued Organizations</h1>
 <% @organizations.all.each do |organization|%>
 <br><li><%=link_to organization.name, organization_path(organization.id) %></li></br>
 <%end%>
