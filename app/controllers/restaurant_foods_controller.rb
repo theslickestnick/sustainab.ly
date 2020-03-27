@@ -14,7 +14,7 @@ class RestaurantFoodsController < ApplicationController
 
     def create
         params_hash = rest_food_params
-        params_hash[:restaurant_id] = @current_restaurant.id
+        params_hash[:restaurant_id] = @current_restaurant.id        
         @restaurant_food = RestaurantFood.create(params_hash)
         redirect_to restaurant_path(@current_restaurant.id) 
         # else

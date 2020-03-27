@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_173212) do
+ActiveRecord::Schema.define(version: 2020_03_26_211113) do
 
   create_table "exchanges", force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "organization_id"
     t.datetime "exchange_start"
     t.datetime "exchange_end"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.string "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_173212) do
     t.string "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: true
   end
 
   create_table "restaurants", force: :cascade do |t|

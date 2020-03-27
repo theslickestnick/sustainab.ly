@@ -3,4 +3,20 @@
 <h3> Hunger is a major problem in NYC. With your generosity, </h3>
 <h3> we can help alleviate it for those throughout our great city. </h3>
 
-<>
+<%= form_for @exchange do |f| %>
+
+    <%= f.hidden_field :restaurant_id %>
+    <%= hidden_field_tag @current_restaurant.id %>
+
+    <%= f.label :exchange_start %>
+    <%= f.datetime_select :exchange_start %>
+
+    <%= f.label :exchange_end %>
+    <%= f.datetime_select :exchange_end %>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+
+    <%= f.submit "Create Exchange!" %>
+
+<% end %>

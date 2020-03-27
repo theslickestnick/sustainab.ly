@@ -1,9 +1,15 @@
-<h1> Welcome to the Sustainab.ly Marketplace </h1>
+<h1> Welcome to your Sustainab.ly Exchange, <%= @current_restaurant.name%>!</h1>
 
 <h4> On the Sustainab.ly Marketplace, restaurants in our network offer </h4>
 <h4> up their excess foods and organizations can claim for distribution! </h4>
 <h4> It's a win-win! We LOVE win-wins!! </h4>
 
-<% @exchanges.all.each do |exchange| %>
-    <li><%= exchange.name %></li>
+<u><h4> Below are all your pending exchanges: </h4></u>
+
+<% Exchange.all.each do |exchange| %>
+<div style="height:px;width:500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+    <label ID:><%= exchange.id %></label>
+    <b><label Exchange Contents:></b><%= @current_restaurant.restaurant_foods.each {|food| food.food_type} %></label>
+</div>
 <% end %>
+ 
